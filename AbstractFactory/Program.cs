@@ -14,8 +14,8 @@ namespace AbstractFactory
             AnimalWorld animalWorld = new AnimalWorld(Africa);
             animalWorld.Eat();
 
-            Continent America = new NorthAmerica();
-            AnimalWorld animalWorld2 = new AnimalWorld(America);
+            Continent northAmerica = new NorthAmerica();
+            AnimalWorld animalWorld2 = new AnimalWorld(northAmerica);
             animalWorld2.Eat();
         }
     }

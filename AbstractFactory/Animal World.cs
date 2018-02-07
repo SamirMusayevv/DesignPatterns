@@ -19,7 +19,8 @@ namespace AbstractFactory
 
         public void Eat()
         {
-            _carnivore.Eat(_herbivore);
+            _herbivore.EatGrass();
+            _carnivore.EatHerbivore(_herbivore);
         }
     }
 }
