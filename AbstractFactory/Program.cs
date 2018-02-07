@@ -10,7 +10,13 @@ namespace AbstractFactory
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("ibiw dayi");
+            Continent Africa = new Africa();
+            AnimalWorld animalWorld = new AnimalWorld(Africa);
+            animalWorld.Eat();
+
+            Continent America = new NorthAmerica();
+            AnimalWorld animalWorld2 = new AnimalWorld(America);
+            animalWorld2.Eat();
         }
     }
 }
