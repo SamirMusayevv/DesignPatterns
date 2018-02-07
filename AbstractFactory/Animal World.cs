@@ -8,8 +8,8 @@ namespace AbstractFactory
 {
     class AnimalWorld
     {
-        private Herbivore _herbivore;
-        private Carnivore _carnivore;
+        public Herbivore _herbivore;
+        public Carnivore _carnivore;
 
         public AnimalWorld(Continent continent)
         {

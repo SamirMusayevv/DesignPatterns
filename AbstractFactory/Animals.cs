@@ -6,56 +6,105 @@ using System.Threading.Tasks;
 
 namespace AbstractFactory
 {
-    
     abstract class Herbivore
     {
-        public abstract void EatGrass();
+        public abstract int Weight { get; set; }
+        public abstract bool Life { get; set; }
+
+        public void EatGrass()
+        {
+            Weight += 10;
+        }
     }
 
     abstract class Carnivore
     {
+        public abstract int Power { get; set; }
+
         public abstract void EatHerbivore(Herbivore herbivore);
+        
     }
 
     class Wildebeest : Herbivore
     {
-        public int Weight { get; set; }
-        public bool Life { get; set; }
+        public override int Weight { get; set; }
+        public override bool Life { get; set; }
 
-        public override void EatGrass()
+        public Wildebeest()
         {
-            Weight += 10;
+            Weight = 70;
+            Life = true;
         }
     }
 
     class Lion : Carnivore
     {
-        public int Power { get; set; }
+        public override int Power { get ; set; }
+
+        public Lion()
+        {
+            Power = 300;
+        }
 
         public override void EatHerbivore(Herbivore herbivore)
         {
+            Console.WriteLine($"{herbivore.GetType().Name}\nWeight: {herbivore.Weight}\nLife: {herbivore.Life}\n");
+            Console.WriteLine($"{GetType().Name}\nPower: {Power}\n");
             Console.WriteLine(GetType().Name + " eats " + herbivore.GetType().Name);
+            Console.WriteLine();
+
+            if (Power > herbivore.Weight)
+                Power += 10;
+            else
+                Power -= 10;
+
+            herbivore.Weight /= 5;
+            herbivore.Life = false;
+
+            Console.WriteLine($"{herbivore.GetType().Name}\nWeight: {herbivore.Weight}\nLife: {herbivore.Life}\n");
+            Console.WriteLine($"{GetType().Name}\nPower: {Power}");
+            Console.WriteLine("_________________________\n");
         }
     }
 
     class Bison : Herbivore
     {
-        public int Weight { get; set; }
-        public bool Life { get; set; }
+        public override int Weight { get; set; }
+        public override bool Life { get; set; }
 
-        public override void EatGrass()
+        public Bison()
         {
-            Weight += 10;
+            Weight = 300;
+            Life = true;
         }
     }
 
     class Wolf : Carnivore
     {
-        public int Power { get; set; }
+        public override int Power { get; set; }
+
+        public Wolf()
+        {
+            Power = 150;
+        }
 
         public override void EatHerbivore(Herbivore herbivore)
         {
+            Console.WriteLine($"{herbivore.GetType().Name}\nWeight: {herbivore.Weight}\nLife: {herbivore.Life}\n");
+            Console.WriteLine($"{GetType().Name}\nPower: {Power}\n");
             Console.WriteLine(GetType().Name + " eats " + herbivore.GetType().Name);
+            Console.WriteLine();
+
+            if (Power > herbivore.Weight)
+                Power += 10;
+            else
+                Power -= 10;
+
+            herbivore.Weight /= 5;
+            herbivore.Life = false;
+
+            Console.WriteLine($"{herbivore.GetType().Name}\nWeight: {herbivore.Weight}\nLife: {herbivore.Life}\n");
+            Console.WriteLine($"{GetType().Name}\nPower: {Power}");
         }
     }
 }
