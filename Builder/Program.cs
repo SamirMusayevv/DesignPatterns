@@ -10,21 +10,20 @@ namespace Builder
     {
         static void Main(string[] args)
         {
-            VehicleBuilder builder;
-
+            CarBuilder builder;
             Shop shop = new Shop();
 
-            builder = new ScooterBuilder();
+            builder = new DaewooLanos();
             shop.Construct(builder);
-            builder.Vehicle.Show();
+            //builder.Car.Show();
 
-            builder = new CarBuilder();
+            builder = new FordProbe();
             shop.Construct(builder);
-            builder.Vehicle.Show();
+            //builder.Car.Show();
 
-            builder = new MotorCycleBuilder();
+            builder = new UAZPatriot();
             shop.Construct(builder);
-            builder.Vehicle.Show();
+            //builder.Car.Show();
         }
     }
 }

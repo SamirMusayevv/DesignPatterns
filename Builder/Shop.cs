@@ -8,12 +8,12 @@ namespace Builder
 {
     class Shop
     {
-        public void Construct(VehicleBuilder vehicleBuilder)
+        public void Construct(CarBuilder carBuilder)
         {
-            vehicleBuilder.BuildFrame();
-            vehicleBuilder.BuildEngine();
-            vehicleBuilder.BuildWheels();
-            vehicleBuilder.BuildDoors();
+            carBuilder.Housing();
+            carBuilder.Engine();
+            carBuilder.Wheels();
+            carBuilder.TransmissionBox();
         }
     }
 }
