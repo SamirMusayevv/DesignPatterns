@@ -10,20 +10,29 @@ namespace Builder
     {
         static void Main(string[] args)
         {
-            CarBuilder builder;
-            Shop shop = new Shop();
+            DaewooLanos daewooLanos = new DaewooLanos();
+            Shop shopDaewoo = new Shop();
+            shopDaewoo.SetCarBuilder(daewooLanos);
+            shopDaewoo.ConstructCar();
+            Car carDaewoo = shopDaewoo.GetCar();
+            Console.WriteLine("Daewoo Lanos");
+            Console.WriteLine(carDaewoo);
 
-            builder = new DaewooLanos();
-            shop.Construct(builder);
-            //builder.Car.Show();
+            FordProbe fordProbe = new FordProbe();
+            Shop shopFord = new Shop();
+            shopFord.SetCarBuilder(fordProbe);
+            shopFord.ConstructCar();
+            Car car = shopFord.GetCar();
+            Console.WriteLine("Ford Probe");
+            Console.WriteLine(car);
 
-            builder = new FordProbe();
-            shop.Construct(builder);
-            //builder.Car.Show();
-
-            builder = new UAZPatriot();
-            shop.Construct(builder);
-            //builder.Car.Show();
+            UAZPatriot UAZpatriot = new UAZPatriot();
+            Shop shopUAZ = new Shop();
+            shopUAZ.SetCarBuilder(UAZpatriot);
+            shopUAZ.ConstructCar();
+            Car carUAZ = shopUAZ.GetCar();
+            Console.WriteLine("UAZ Patriot");
+            Console.WriteLine(car);
         }
     }
 }

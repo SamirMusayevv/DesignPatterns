@@ -8,95 +8,90 @@ namespace Builder
 {
     abstract class CarBuilder
     {
-        public Car Car { get; set; }
+        protected Car Car { get; private set; }
 
-        public abstract void Housing();
-        public abstract void Engine();
-        public abstract void Wheels();
-        public abstract void TransmissionBox();
+        public void CreateNewCar()
+        {
+            Car = new Car();
+        }
+
+        public Car GetMyCar()
+        {
+            return Car;
+        }
+
+        public abstract void SetHousing();
+        public abstract void SetEngine();
+        public abstract void SetWheels();
+        public abstract void SetTransmissionBox();
     }
 
     class DaewooLanos : CarBuilder
     {
-        public DaewooLanos()
+        public override void SetEngine()
         {
-            Car = new Car("Daewoo Lanos");
+            Car.Engine = 98;
         }
 
-        public override void Housing()
+        public override void SetHousing()
         {
-            Console.WriteLine("Sedan");
+            Car.Housing = "Sedan";
         }
 
-        public override void Engine()
+        public override void SetTransmissionBox()
         {
-            Console.WriteLine("98 (Horsepower)");
+            Car.TransmissionBox = "5 Manual";
         }
 
-        public override void Wheels()
+        public override void SetWheels()
         {
-            Console.WriteLine("13 radius");
-        }
-
-        public override void TransmissionBox()
-        {
-            Console.WriteLine("5 Manual");
+            Car.Wheels = 14;
         }
     }
 
     class FordProbe : CarBuilder
     {
-        public FordProbe()
+        public override void SetEngine()
         {
-            Car = new Car("Ford Probe");
+            Car.Engine = 160;
         }
 
-        public override void Housing()
+        public override void SetHousing()
         {
-            Console.WriteLine("Coupe");
+            Car.Housing = "Coupe";
         }
 
-        public override void Engine()
+        public override void SetTransmissionBox()
         {
-            Console.WriteLine("160 (Horsepower)");
+            Car.TransmissionBox = "4 Auto";
         }
 
-        public override void Wheels()
+        public override void SetWheels()
         {
-            Console.WriteLine("14 radius");
-        }
-
-        public override void TransmissionBox()
-        {
-            Console.WriteLine("4 Auto");
+            Car.Wheels = 14;
         }
     }
 
     class UAZPatriot : CarBuilder
     {
-        public UAZPatriot()
+        public override void SetEngine()
         {
-            Car = new Car("UAZ Patriot");
+            Car.Engine = 120;
         }
 
-        public override void Housing()
+        public override void SetHousing()
         {
-            Console.WriteLine("Wagon");
+            Car.Housing = "Universal";
         }
 
-        public override void Engine()
+        public override void SetTransmissionBox()
         {
-            Console.WriteLine("120 (Horsepower)");
+            Car.TransmissionBox = "4 Manual";
         }
 
-        public override void Wheels()
+        public override void SetWheels()
         {
-            Console.WriteLine("16 radius");
-        }
-
-        public override void TransmissionBox()
-        {
-            Console.WriteLine("4 Manual");
+            Car.Wheels = 16;
         }
     }
 }

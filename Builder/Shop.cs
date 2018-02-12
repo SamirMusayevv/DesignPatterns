@@ -8,12 +8,25 @@ namespace Builder
 {
     class Shop
     {
-        public void Construct(CarBuilder carBuilder)
+        private CarBuilder _carBuilder;
+
+        public void SetCarBuilder(CarBuilder ICarBuilder)
         {
-            carBuilder.Housing();
-            carBuilder.Engine();
-            carBuilder.Wheels();
-            carBuilder.TransmissionBox();
+            _carBuilder = ICarBuilder;
+        }
+
+        public Car GetCar()
+        {
+            return _carBuilder.GetMyCar();
+        }
+
+        public void ConstructCar()
+        {
+           _carBuilder.CreateNewCar();
+           _carBuilder.SetHousing();
+           _carBuilder.SetEngine();
+           _carBuilder.SetWheels();
+           _carBuilder.SetTransmissionBox();
         }
     }
 }

@@ -8,16 +8,14 @@ namespace Builder
 {
     class Car
     {
-        private string _car;
+        public string Housing { get; set; }
+        public int Engine { get; set; }
+        public int Wheels { get; set; }
+        public string TransmissionBox { get; set; }
 
-        public Car(string car)
+        public override string ToString()
         {
-            _car = car;
-        }
-
-        public void Show()
-        {
-            
+            return $"Housing: {Housing}\nEngine: {Engine}\nWheels: {Wheels}\nTransmission box: {TransmissionBox}\n";
         }
     }
 }
