@@ -10,7 +10,12 @@ namespace FactoryMethod
     {
         static byte[] GetRandomColor(Random rnd)
         {
-            return new byte[] { (byte)rnd.Next(0, 255), (byte)rnd.Next(0, 255), (byte)rnd.Next(0, 255) };
+            return new byte[] 
+            {
+                (byte)rnd.Next(0, 255),
+                (byte)rnd.Next(0, 255),
+                (byte)rnd.Next(0, 255)
+            };
         }
 
         static void Main(string[] args)

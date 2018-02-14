@@ -15,7 +15,7 @@ namespace FactoryMethod
     {
         public override Figure GetFigure(byte Red, byte Green, byte Blue)
         {
-            return new Three(Red, Green, Blue);
+            return new One(Red, Green, Blue);
         }
     }
 
@@ -31,7 +31,7 @@ namespace FactoryMethod
     {
         public override Figure GetFigure(byte Red, byte Green, byte Blue)
         {
-            return new One(Red, Green, Blue);
+            return new Three(Red, Green, Blue);
         }
     }
 
@@ -39,7 +39,7 @@ namespace FactoryMethod
     {
         public override Figure GetFigure(byte Red, byte Green, byte Blue)
         {
-            return new Six(Red, Green, Blue);
+            return new Four(Red, Green, Blue);
         }
     }
 
@@ -47,7 +47,7 @@ namespace FactoryMethod
     {
         public override Figure GetFigure(byte Red, byte Green, byte Blue)
         {
-            return new Four(Red, Green, Blue);
+            return new Five(Red, Green, Blue);
         }
     }
 
@@ -55,7 +55,7 @@ namespace FactoryMethod
     {
         public override Figure GetFigure(byte Red, byte Green, byte Blue)
         {
-            return new Five(Red, Green, Blue);
+            return new Six(Red, Green, Blue);
         }
     }
 }

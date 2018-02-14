@@ -8,7 +8,7 @@ namespace FactoryMethod
 {
     abstract class Figure
     {
-        public byte[,] FigureGeometry { get; set; }
+        public int[,] FigureGeometry { get; set; }
         public byte[] Color { get; set; }
         public string Name { get; protected set; }
 
@@ -47,7 +47,7 @@ namespace FactoryMethod
         public One(byte Red, byte Green, byte Blue) : base(Red, Green, Blue)
         {
             Name = "One";
-            FigureGeometry = new byte[4, 4] 
+            FigureGeometry = new int[4, 4]
             {
                 { 0, 0, 1, 0 },
                 { 0, 0, 1, 0 },
@@ -62,7 +62,7 @@ namespace FactoryMethod
         public Two(byte Red, byte Green, byte Blue) : base(Red, Green, Blue)
         {
             Name = "Two";
-            FigureGeometry = new byte[4, 4] 
+            FigureGeometry = new int[4, 4]
             {
                 { 0, 0, 1, 1 },
                 { 0, 1, 1, 0 },
@@ -77,7 +77,7 @@ namespace FactoryMethod
         public Three(byte Red, byte Green, byte Blue) : base(Red, Green, Blue)
         {
             Name = "Three";
-            FigureGeometry = new byte[4, 4]
+            FigureGeometry = new int[4, 4]
             {
                 { 1, 1, 0, 0 },
                 { 0, 1, 1, 0 },
@@ -92,7 +92,7 @@ namespace FactoryMethod
         public Four(byte Red, byte Green, byte Blue) : base(Red, Green, Blue)
         {
             Name = "Four";
-            FigureGeometry = new byte[4, 4]
+            FigureGeometry = new int[4, 4]
             {
                 { 0, 0, 0, 0 },
                 { 1, 0, 0, 0 },
@@ -107,9 +107,9 @@ namespace FactoryMethod
         public Five(byte Red, byte Green, byte Blue) : base(Red, Green, Blue)
         {
             Name = "Five";
-            FigureGeometry = new byte[4, 4] 
+            FigureGeometry = new int[4, 4] 
             {
-                { 1, 1, 1, 1 },
+                { 1, 1, 1, 0 },
                 { 1, 0, 0, 0 },
                 { 0, 0, 0, 0 },
                 { 0, 0, 0, 0 }
@@ -122,7 +122,7 @@ namespace FactoryMethod
         public Six(byte Red, byte Green, byte Blue) : base(Red, Green, Blue)
         {
             Name = "Six";
-            FigureGeometry = new byte[4, 4] 
+            FigureGeometry = new int[4, 4] 
             {
                 { 0, 1, 0, 0 },
                 { 1, 1, 1, 0 },

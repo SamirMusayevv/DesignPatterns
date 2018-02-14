@@ -17,11 +17,6 @@ namespace FactoryMethod
             Creator = null;
         }
 
-        public void AddFigure(byte Red, byte Green, byte Blue)
-        {
-            Figures.Add(Creator.GetFigure(Red, Green, Blue));
-        }
-
         public void AddFigure(byte[] color)
         {
             Figures.Add(Creator.GetFigure(color[0], color[1], color[2]));
