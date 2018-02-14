@@ -8,187 +8,127 @@ namespace FactoryMethod
 {
     abstract class Figure
     {
-        public abstract int[,] Arr { get; set; }
-        public abstract void draw(int[,] Arr);
+        public byte[,] FigureGeometry { get; set; }
+        public byte[] Color { get; set; }
+        public string Name { get; protected set; }
+
+        public Figure(byte Red, byte Green, byte Blue)
+        {
+            Color = new byte[3];
+            SetColor(Red, Green, Blue);
+        }
+
+        public void SetColor(byte Red, byte Green, byte Blue)
+        {
+            Color[0] = Red;
+            Color[1] = Green;
+            Color[2] = Blue;
+        }
+
+        public override string ToString()
+        {
+            Console.WriteLine($"Figure name: {Name}");
+            string color = $"Color: Red:{Color[0]}, Green:{Color[1]}, Blue:{Color[2]}\n";
+
+            for (int i = 0; i < FigureGeometry.Length / 4; i++)
+            {
+                for (int j = 0; j < FigureGeometry.Length / 4; j++)
+                {
+                   Console.Write(FigureGeometry[i, j]);
+                }
+                Console.WriteLine();
+            }
+            return color;
+        }
     }
 
     class One : Figure
     {
-        public One()
+        public One(byte Red, byte Green, byte Blue) : base(Red, Green, Blue)
         {
-            Arr = new int[4, 4]
+            Name = "One";
+            FigureGeometry = new byte[4, 4] 
             {
-                { 1, 1, 1, 0 },
-                { 1, 0, 0, 0 },
-                { 0, 0, 0, 0 },
-                { 0, 0, 0, 0 }
+                { 0, 0, 1, 0 },
+                { 0, 0, 1, 0 },
+                { 0, 0, 1, 0 },
+                { 0, 0, 1, 0 }
             };
-
-            draw(Arr);
-        }
-
-        public override int[,] Arr { get{ return Arr; } set { Arr = value; } }
-
-        public override void draw(int[,] Arr)
-        {
-            for (int i = 0; i < Arr.Length / 4; i++)
-            {
-                for (int j = 0; j < Arr.Length / 4; j++)
-                {
-                    Console.Write(Arr[i,j]);
-                }
-                Console.WriteLine();
-            }
         }
     }
 
     class Two : Figure
     {
-        public Two()
+        public Two(byte Red, byte Green, byte Blue) : base(Red, Green, Blue)
         {
-            Arr = new int[4, 4]
+            Name = "Two";
+            FigureGeometry = new byte[4, 4] 
             {
+                { 0, 0, 1, 1 },
                 { 0, 1, 1, 0 },
-                { 1, 1, 0, 0 },
                 { 0, 0, 0, 0 },
                 { 0, 0, 0, 0 }
             };
-
-            draw(Arr);
-        }
-
-        public override int[,] Arr { get { return Arr; } set { Arr = value; } }
-
-        public override void draw(int[,] Arr)
-        {
-            for (int i = 0; i < Arr.Length / 4; i++)
-            {
-                for (int j = 0; j < Arr.Length / 4; j++)
-                {
-                    Console.Write(Arr[i, j]);
-                }
-                Console.WriteLine();
-            }
         }
     }
 
     class Three : Figure
     {
-        public Three()
+        public Three(byte Red, byte Green, byte Blue) : base(Red, Green, Blue)
         {
-            Arr = new int[4, 4]
+            Name = "Three";
+            FigureGeometry = new byte[4, 4]
             {
                 { 1, 1, 0, 0 },
                 { 0, 1, 1, 0 },
                 { 0, 0, 0, 0 },
                 { 0, 0, 0, 0 }
             };
-
-            draw(Arr);
-        }
-
-        public override int[,] Arr { get { return Arr; } set { Arr = value; } }
-
-        public override void draw(int[,] Arr)
-        {
-            for (int i = 0; i < Arr.Length / 4; i++)
-            {
-                for (int j = 0; j < Arr.Length / 4; j++)
-                {
-                    Console.Write(Arr[i, j]);
-                }
-                Console.WriteLine();
-            }
         }
     }
 
     class Four : Figure
     {
-        public Four()
+        public Four(byte Red, byte Green, byte Blue) : base(Red, Green, Blue)
         {
-            Arr = new int[4, 4]
+            Name = "Four";
+            FigureGeometry = new byte[4, 4]
             {
-                { 0, 1, 0, 0 },
-                { 1, 1, 1, 0 },
                 { 0, 0, 0, 0 },
+                { 1, 0, 0, 0 },
+                { 1, 1, 1, 0 },
                 { 0, 0, 0, 0 }
             };
-
-            draw(Arr);
-        }
-
-        public override int[,] Arr { get { return Arr; } set { Arr = value; } }
-
-        public override void draw(int[,] Arr)
-        {
-            for (int i = 0; i < Arr.Length / 4; i++)
-            {
-                for (int j = 0; j < Arr.Length / 4; j++)
-                {
-                    Console.Write(Arr[i, j]);
-                }
-                Console.WriteLine();
-            }
         }
     }
 
     class Five : Figure
     {
-        public Five()
+        public Five(byte Red, byte Green, byte Blue) : base(Red, Green, Blue)
         {
-            Arr = new int[4, 4]
+            Name = "Five";
+            FigureGeometry = new byte[4, 4] 
             {
+                { 1, 1, 1, 1 },
                 { 1, 0, 0, 0 },
-                { 1, 1, 1, 0 },
                 { 0, 0, 0, 0 },
                 { 0, 0, 0, 0 }
             };
-
-            draw(Arr);
-        }
-
-        public override int[,] Arr { get { return Arr; } set { Arr = value; } }
-
-        public override void draw(int[,] Arr)
-        {
-            for (int i = 0; i < Arr.Length / 4; i++)
-            {
-                for (int j = 0; j < Arr.Length / 4; j++)
-                {
-                    Console.Write(Arr[i, j]);
-                }
-                Console.WriteLine();
-            }
         }
     }
 
     class Six : Figure
     {
-        public Six()
+        public Six(byte Red, byte Green, byte Blue) : base(Red, Green, Blue)
         {
-            Arr = new int[4, 4]
+            Name = "Six";
+            FigureGeometry = new byte[4, 4] 
             {
                 { 0, 1, 0, 0 },
-                { 0, 1, 0, 0 },
-                { 0, 1, 0, 0 },
-                { 0, 1, 0, 0 }
+                { 1, 1, 1, 0 },
+                { 0, 0, 0, 0 },
+                { 0, 0, 0, 0 }
             };
-
-            draw(Arr);
-        }
-
-        public override int[,] Arr { get { return Arr; } set { Arr = value; } }
-
-        public override void draw(int[,] Arr)
-        {
-            for (int i = 0; i < Arr.Length / 4; i++)
-            {
-                for (int j = 0; j < Arr.Length / 4; j++)
-                {
-                    Console.Write(Arr[i, j]);
-                }
-                Console.WriteLine();
-            }
         }
     }
 }

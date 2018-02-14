@@ -8,10 +8,35 @@ namespace FactoryMethod
 {
     class Program
     {
+        static byte[] GetRandomColor(Random rnd)
+        {
+            return new byte[] { (byte)rnd.Next(0, 255), (byte)rnd.Next(0, 255), (byte)rnd.Next(0, 255) };
+        }
+
         static void Main(string[] args)
         {
-            Figure figure = FigureFactory.GetFigure("One");
-            
+            Random rnd = new Random();
+            Tetris tetris = new Tetris();
+
+            tetris.Creator = new OneCreator();
+            tetris.AddFigure(GetRandomColor(rnd));
+
+            tetris.Creator = new TwoCreator();
+            tetris.AddFigure(GetRandomColor(rnd));
+
+            tetris.Creator = new ThreeCreator();
+            tetris.AddFigure(GetRandomColor(rnd));
+
+            tetris.Creator = new FourCreator();
+            tetris.AddFigure(GetRandomColor(rnd));
+
+            tetris.Creator = new FiveCreator();
+            tetris.AddFigure(GetRandomColor(rnd));
+
+            tetris.Creator = new SixCreator();
+            tetris.AddFigure(GetRandomColor(rnd));
+
+            tetris.PrintFigures();
         }
     }
 }
