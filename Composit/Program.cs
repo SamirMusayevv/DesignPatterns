@@ -10,10 +10,10 @@ namespace Composit
     {
         static void Main(string[] args)
         {
-            Component folder = new MyFolder(@"D:\Step it academy");
+            Component folder = new MyFolder(@"C:\Intel");
             folder.Draw();
 
-            Console.WriteLine("\n");
+            //Console.WriteLine("\n");
 
             //Component file = new MyFile(@"D:\Step it academy\C#\C Exam.mp4");
             //file.Display();
