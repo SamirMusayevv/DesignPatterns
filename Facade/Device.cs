@@ -8,7 +8,25 @@ namespace Facade
 {
     abstract class Device
     {
-        public abstract override string ToString();
+        public void CheckTemperature()
+        {
+            Console.WriteLine($"{this} temperature check: Temperature is normal.");
+        }
+
+        public void CheckVoltage()
+        {
+            Console.WriteLine($"{this} voltage check: Voltage is normal.");
+        }
+
+        public void Run()
+        {
+            Console.WriteLine($"{this} running...");
+        }
+
+        public void Stop()
+        {
+            Console.WriteLine($"{this} stopped.");
+        }
     }
 
     class GraphicCard : Device
@@ -18,37 +36,27 @@ namespace Facade
             return "Graphic Card";
         }
 
-        public void Run()
-        {
-            Console.WriteLine("Graphic Card running...");
-        }
-
         public void CheckMonitorConnection()
         {
-            Console.WriteLine("Monitor connected");
-        }
-
-        public void DataOutputRam()
-        {
-            Console.WriteLine("Ram data output");
-        }
-
-        public void DataOutputDVD()
-        {
-            Console.WriteLine("Dvd data output");
-        }
-
-        public void DataOutputHDD()
-        {
-            Console.WriteLine("HDD data output");
+                Console.WriteLine($"{this}: Monitor connected.");
         }
     }
 
-    class PowerSupply : Device
+    class RAM : Device
     {
         public override string ToString()
         {
-            return "Power Supply";
+            return "RAM";
+        }
+
+        public void MemoryCheck()
+        {
+                Console.WriteLine($"{this}: Memory check OK.");
+        }
+
+        public void ClearMemory()
+        {
+            Console.WriteLine($"{this}: Memory Cleared.");
         }
     }
 
@@ -56,7 +64,12 @@ namespace Facade
     {
         public override string ToString()
         {
-            return "HDD";
+            return "Hard Drive";
+        }
+
+        public void CheckBootLoader()
+        {
+                Console.WriteLine($"{this}: BootLoader OK.");
         }
     }
 
@@ -64,23 +77,50 @@ namespace Facade
     {
         public override string ToString()
         {
-            return "DVD";
+            return "ROM";
         }
+
     }
 
-    class Ram : Device
+    class PowerSupply : Device
     {
-        public override string ToString()
-        {
-            return "Ram";
-        }
-    }
+        public bool Start { get; set; }
 
-    class Sensor : Device
-    {
         public override string ToString()
         {
-            return "Sensor";
+            return "Power Supply";
+        }
+
+        public void PowerGraphicCard()
+        {
+            if (Start)
+                Console.WriteLine("Power Supply: Graphic Card Powered.");
+            else
+                Console.WriteLine("Power Supply: Graphic Card power stopped.");
+        }
+
+        public void PowerDVD()
+        {
+            if (Start)
+                Console.WriteLine("Power Supply: ROM Powered.");
+            else
+                Console.WriteLine("Power Supply: ROM power stopped.");
+        }
+
+        public void PowerHDD()
+        {
+            if (Start)
+                Console.WriteLine("Power Supply: HDD Powered.");
+            else
+                Console.WriteLine("Power Supply: HDD power stopped.");
+        }
+
+        public void PowerRAM()
+        {
+            if (Start)
+                Console.WriteLine("Power Supply: RAM Powered.");
+            else
+                Console.WriteLine("Power Supply: RAM power stopped.");
         }
     }
 }

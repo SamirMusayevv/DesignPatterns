@@ -10,7 +10,11 @@ namespace Facade
     {
         static void Main(string[] args)
         {
+            Computer computer = new Computer();
+            computer.BeginWork();
 
+            Console.WriteLine("\n");
+            computer.PowerOff();
         }
     }
 }
