@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
+    <Compile Include="Elfs.cs" />
+    <Compile Include="ElfsDecorator.cs" />
     <Compile Include="Humans.cs" />
     <Compile Include="HumansDecorator.cs" />
     <Compile Include="Professions.cs" />

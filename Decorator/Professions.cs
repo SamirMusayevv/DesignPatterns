@@ -10,9 +10,19 @@ namespace Decorator
     {
         public Humans Humans { get; set; }
 
-        public override int Attact { get => Humans.Attact + _Attact; set => Attact = value; }
-        public override int Speed { get => Humans.Speed + _Speed; set => Speed = value; }
-        public override int Healt { get => Humans.Healt + _Healt; set => Healt = value; }
-        public override int Defence { get => Humans.Defence + _Defence; set => Defence = value; }
+        public override int Attact { get => Humans.Attact + attact; set => Attact = value; }
+        public override int Speed { get => Humans.Speed + speed; set => Speed = value; }
+        public override int Healt { get => Humans.Healt + healt; set => Healt = value; }
+        public override int Defence { get => Humans.Defence + defence; set => Defence = value; }
+    }
+
+    class ElfsProfessions : Elfs
+    {
+        public Elfs Elfs { get; set; }
+
+        public override int Attact { get => Elfs.Attact + attact; set => Attact = value; }
+        public override int Speed { get => Elfs.Speed + speed; set => Speed = value; }
+        public override int Healt { get => Elfs.Healt + healt; set => Healt = value; }
+        public override int Defence { get => Elfs.Defence + defence; set => Defence = value; }
     }
 }
